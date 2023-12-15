@@ -1,0 +1,90 @@
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Caskaydia Cove Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background: black;
+}
+
+tooltip {
+  color: #ffffff;
+  background: #202020;
+  border-color: #de4040;
+  border-radius: 0px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+#workspaces button {
+  color: #ffffff;
+  /*background: #000000;*/
+  background: #2d42ff;
+
+  /*
+  border-radius: 0px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  */
+
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#workspaces button.active {
+  background: #de4040;
+  border-color: #de4040;
+}
+
+#workspaces button:hover {
+  background: #79ff5e;
+  color: #202020;
+  /*border-color: #79ff5e;*/
+}
+
+.modules-left > widget > *,
+.modules-right > widget > *,
+.modules-center > widget > * {
+  color: #ffffff;
+  background: #000000;
+  opacity: 1;
+  margin: 3px 0px 3px 0px;
+  border-radius: 10px;
+}
+
+.modules-left > widget > *,
+.modules-right > widget > * {
+  padding: 0 6px;
+}
+
+.modules-left:first-child {
+  margin-left: 6px;
+}
+
+.modules-right:last-child {
+  margin-right: 6px;
+}
+
+#custom-spotify {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+
+#tray {
+  padding: 0 4px;
+}
+

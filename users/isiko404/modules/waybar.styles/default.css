@@ -1,0 +1,110 @@
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Caskaydia Cove Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+}
+
+window#waybar {
+  background: rgba(17, 17, 27, 1);
+}
+
+tooltip {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #11111b;
+}
+
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 7px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+  color: #cdd6f4;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.active {
+  background: #a6adc8;
+  color: #313244;
+  margin-left: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 2px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button:hover {
+  background: #f5c2e7;
+  color: #313244;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+.modules-left > widget > *,
+.modules-right > widget > *,
+.modules-center > widget > * {
+  color: #cdd6f4;
+  background: #11111b;
+  opacity: 1;
+  margin: 3px 0px 3px 0px;
+  border-radius: 10px;
+}
+
+.modules-left > widget > *,
+.modules-right > widget > * {
+  padding: 0 6px;
+}
+
+.modules-left:first-child {
+  margin-left: 6px;
+}
+
+.modules-right:last-child {
+  margin-right: 6px;
+}
+
+#custom-spotify {
+  border-left-width: 0px;
+
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+/* workspace window block */
+
+#workspaces {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#window {
+  border-radius: 0px 10px 10px 0px;
+}
+
+/* control center block */
+
+#custom-wallchange {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 6px;
+}
+
+#wireplumber {
+  /*margin-left: 25px;*/
+  border-radius: 10px 0 0 10px;
+}
+
+#tray {
+  border-radius: 0 10px 10px 0;
+  padding: 0 4px;
+}
+
