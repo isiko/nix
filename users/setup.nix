@@ -15,9 +15,15 @@ in
   # Users
   home-manager.users.isiko404 	= isiko404.home;
   users.users.isiko404 		= {
-     isNormalUser = true;
-     description = "Isaak";
-     extraGroups = [ "networkmanager" "wheel" "audio" "pipewire"];
+    isNormalUser = true;
+    description = "Isaak";
+    extraGroups = [ 
+    "networkmanager"
+      "wheel"
+      "audio"
+      "pipewire"
+      "adbusers"
+     ];
      shell = pkgs.zsh;
      packages = with pkgs; [];
   };

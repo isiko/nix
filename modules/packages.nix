@@ -125,6 +125,7 @@ in
     onthespot
     thunderbird
     #jetbrains-toolbox
+    android-studio
     jetbrains.idea-ultimate
     #jetbrains.rust-rover
     jetbrains.datagrip
@@ -187,9 +188,9 @@ in
     alsa-utils
     
     # Other Audio stuff
-    pwvucontrol
-    qpwgraph
-    qjackctl
+    #pwvucontrol
+    #qpwgraph
+    #qjackctl
 
     # Currently just testing this
     libsForQt5.kdeconnect-kde

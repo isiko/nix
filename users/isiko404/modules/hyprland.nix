@@ -27,10 +27,14 @@ in
             ];
 
             animation = [
-                "windowsIn, 1, 2, smoothOut, slide"
-                "windowsOut, 1, 2, smoothIn, slide"
-                "windowsMove, 1, 2, smoothOut, slide"
-                "workspaces, 1, 3, smoothInOutSine, slide"
+                "windowsIn,   1, 3, smoothOut,        slide"
+                "windowsOut,  1, 3, smoothIn,         slide"
+                "windowsMove, 1, 3, smoothOut,        slide"
+                "workspaces,  1, 3, smoothInOutSine,  slide"
+                "fadeIn,      1, 3, smoothOut"
+                "fadeOut,     1, 3, smoothIn"
+                "border,      0"
+
             ];
         };
         bind = [
@@ -172,6 +176,9 @@ in
         };
         decoration = {
             rounding = 0;
+            blur = {
+              enabled = true;
+            };
             #blur = true;
             #blur_size = 30;
             #blur_passes = 4;

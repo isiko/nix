@@ -2,7 +2,8 @@
 {
   programs.helix = {
     enable = true;
-    defaultEditor = true;
+    # Defined via a Session variable in home.nix
+    #defaultEditor = false;
     languages = {};
     settings = {
       theme = "gruvbox";

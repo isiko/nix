@@ -5,6 +5,7 @@
 
   ## Dennis
   security.rtkit.enable = true;
+  sound.enable = false;
   services.pipewire = {
     enable = true;
 
@@ -14,6 +15,7 @@
     audio.enable = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
   };
   
   # rtkit is optional but recommended
@@ -26,7 +28,6 @@
 
   #   pulse.enable = true;
 
-  #   wireplumber.enable = true;
   # };
   # sound.enable = false;
 

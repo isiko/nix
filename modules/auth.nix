@@ -19,8 +19,13 @@
 
   security.pam.services = {
     login = {
-      # fprintAuth = true;
-      # u2fAuth = true;
+      fprintAuth = true;
+      u2fAuth = true;
+      enableGnomeKeyring = true;
+    };
+    swaylock = {
+      fprintAuth = false;
+      u2fAuth = false;
       enableGnomeKeyring = true;
     };
     sudo = {
