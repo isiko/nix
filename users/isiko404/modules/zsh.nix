@@ -16,9 +16,19 @@
         htop = "btop";
         dig = "q";
         wtf = "wtfutil";
-        cgit = "git --git-dir /home/isiko404/Github/nix.git --work-tree /etc/nixos";
         cb = "cgit add -A && cgit commit -m \"Backup $(date)\" && cgit push";
         ucb = "update && cb";
+
+        cgit = "git --git-dir /home/isiko404/Github/nix.git --work-tree /etc/nixos";
+        gs = "git status";
+        ga = "git add";
+        gc = "git commit";
+        gp = "git push";
+
+        cgs = "cgit status";
+        cga = "cgit add";
+        cgc = "cgit commit";
+        cgp = "cgit push";
 
         wlp = "wl-present";
     };
