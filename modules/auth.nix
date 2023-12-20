@@ -19,8 +19,8 @@
 
   security.pam.services = {
     login = {
-      fprintAuth = true;
-      u2fAuth = true;
+      fprintAuth = false;
+      u2fAuth = false;
       enableGnomeKeyring = true;
     };
     swaylock = {
