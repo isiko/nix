@@ -28,6 +28,15 @@ let
     refreshRate = 75;
   };
 
+  ATIS_generic_data = monitor: {
+    criteria = "Philips Consumer Electronics Company PHL 241B8Q ${monitor}";
+    diagonalLength = 24;
+    width = 1920;
+    height = 1080;
+    refreshRate = 59.95;
+  };
+  ATIS_left_data = ATIS_generic_data "ZV02019005049";
+
   fachschaft_generic_data = monitor: {
     criteria = "LG Electronics 24EB23 ${monitor}";
     diagonalLength = 24;
@@ -51,6 +60,8 @@ let
   laptopDisplay = dataToConfig integrated_data;
   home_top = dataToConfig home_top_data;
   home_wide = dataToConfig home_wide_data;
+
+  ATIS_left = dataToConfig ATIS_left_data;
 
   fachschaft_left = dataToConfig fachschaft_left_data; 
   fachschaft_right = dataToConfig fachschaft_right_data;
@@ -96,6 +107,12 @@ in
           (laptopDisplay "960,1200")
           (fachschaft_left "0,0")
           (fachschaft_right "1920,0")
+        ];
+      };
+      ATIS = {
+        outputs = [
+          (ATIS_left "0,0")
+          (laptopDisplay "0,1080")
         ];
       };
     };
