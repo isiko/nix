@@ -19,16 +19,20 @@
         cb = "cgit add -A && cgit commit -m \"Backup $(date)\" && cgit push";
         ucb = "update && cb";
 
-        cgit = "git --git-dir /home/isiko404/Github/nix.git --work-tree /etc/nixos";
-        gs = "git status";
         ga = "git add";
         gc = "git commit";
-        gp = "git push";
+        gd = "git diff";
+        gpl = "git pull";
+        gps = "git push";
+        gs = "git status";
 
-        cgs = "cgit status";
+        cgit = "git --git-dir /home/isiko404/Github/nix.git --work-tree /etc/nixos";
         cga = "cgit add";
         cgc = "cgit commit";
-        cgp = "cgit push";
+        cgd = "cgit diff";
+        cgpl = "cgit pull";
+        cgps = "cgit push";
+        cgs = "cgit status";
 
         wlp = "wl-present";
     };
