@@ -53,7 +53,7 @@
           "states" = {
             "good" = 95;
             "warning" = 30;
-            "critical" = 20;
+            "critical" = 15;
           };
         };
         "network" = {

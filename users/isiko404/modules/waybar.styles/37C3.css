@@ -13,6 +13,26 @@ window#waybar {
   background: black;
 }
 
+#workspaces button,
+#battery {
+  color: #ffffff;
+
+  border-radius: 0px;
+  border-width: 0px;
+  border-style: solid;
+
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 tooltip {
   color: #ffffff;
   background: #202020;
@@ -26,22 +46,6 @@ tooltip {
   color: #ffffff;
   /*background: #000000;*/
   background: #2d42ff;
-
-  /*
-  border-radius: 0px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent;
-  */
-
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 2px;
-  margin-right: 2px;
-
-  padding: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 #workspaces button.active {
@@ -86,5 +90,28 @@ tooltip {
 
 #tray {
   padding: 0 4px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
+#battery.warning:not(.charging) {
+    background-color: #f6f675;
+    color: black;
+}
+
+@keyframes blink {
+    to {
+        background-color: #561010;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #de4040;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
