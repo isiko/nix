@@ -22,7 +22,7 @@
         modules-right = [ "mpris" "hyprland/submap" "tray" "disk" "memory" "cpu" "network" "wireplumber" "backlight" "battery"];
         "hyprland/workspaces"= {
           active-only = false;
-          all-outputs = true;
+          all-outputs = false;
           format = "{icon}";
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -235,6 +235,6 @@
       };
     };
     #style = builtins.readFile ./waybar.styles/default.css;
-    style = builtins.readFile ./waybar.styles/37C3.css;
+    style = builtins.readFile ./waybar.styles/2.0.css;
 };
 }
