@@ -10,6 +10,7 @@
   networking.firewall = {
     enable = true;
     checkReversePath = false; # Needed for VPN stuff
+    allowPing = false;
     allowedTCPPorts = [ 
       #4444
       #1312
@@ -36,5 +37,40 @@
     allowedUDPPortRanges = [
       #{ from = 1714; to = 1764; } # KDE Connect
     ];
+  };
+  networking.networkmanager.ensureProfiles.profiles = 
+  let 
+    interface = "wlp1s0";
+  in 
+  {
+    "37C3" = {
+      connection = {
+        id = "37C3";
+        type = "wifi";
+        interface-name = interface;
+      };
+      wifi = {
+        mode = "infrastructure";
+        ssid = "37C3";
+      };
+      wifi-security = {
+        auth-alg = "open";
+        key-mgmt = "wpa-eap";
+      };
+      "802-1x" = {
+        anonymous-identity = "37C3";
+        eap = "ttls;";
+        identity = "37C3";
+        password = "37C3";
+        phase2-auth = "mschapv2";
+      };
+      ipv4 = {
+        method = "auto";
+      };
+      ipv6 = {
+        addr-gen-mode = "default";
+        method = "auto";
+      };
+    };
   };
 }
