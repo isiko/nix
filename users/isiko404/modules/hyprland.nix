@@ -123,7 +123,7 @@ in
             "element-desktop --hidden --profile Privat"
             "element-desktop --hidden --profile KIT"
             "element-desktop --hidden --profile FSMI"
-            "mako & /usr/lib/polkit-kde-authentication-agent-1"
+            "/usr/lib/polkit-kde-authentication-agent-1"
             "wl-clipboard-history -t"
             "swaybg -m fill -i ${vars.wallpaperPath}"
             "discordcanary"
@@ -166,8 +166,8 @@ in
         };
         dwindle = {
             pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-            preserve_split = true; # you probably want this
-            #smart_split = true; # you probably want this
+            preserve_split = false; # you probably want this
+            smart_split = true; # you probably want this
             #no_gaps_when_only = -1;
         };
         misc = {

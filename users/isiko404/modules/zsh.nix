@@ -25,6 +25,7 @@
         gpl = "git pull";
         gps = "git push";
         gs = "git status";
+        gl = "git log";
 
         cgit = "git --git-dir /home/isiko404/Github/nix.git --work-tree /etc/nixos";
         cga = "cgit add";
@@ -33,6 +34,7 @@
         cgpl = "cgit pull";
         cgps = "cgit push";
         cgs = "cgit status";
+        cgl = "cgit log";
 
         wlp = "wl-present";
     };
@@ -82,7 +84,7 @@
 
         if command -v figlet &> /dev/null
         then
-            figlet "$(whoami) - $(hostnamectl hostname)"
+            figlet "$(whoami)@$(hostnamectl hostname)"
         fi
         
         unset SSH_AGENT_PID

@@ -25,6 +25,7 @@ in
     #./modules/sway.nix
     ./modules/syncthing.nix
     ./modules/tlp.nix
+    ./modules/docker.nix
     <home-manager/nixos>
   ]; 
 
@@ -49,6 +50,10 @@ in
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "FiraCode" "Inconsolata" ]; })
       font-awesome
+      mona-sans
+      fira-mono
+      fira-code
+
     ];
   };
 

@@ -19,6 +19,9 @@ in
     ./modules/hyprland.nix
     ./modules/email.nix
     ./modules/helix.nix
+    ./modules/mako.nix
+    ./modules/swaylock.nix
+    ./modules/alacritty.nix
   ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
@@ -90,20 +93,6 @@ in
          };
        })
     ];
-  };
-
-  programs.swaylock = {
-    enable = true;
-    package = pkgs.swaylock-effects;
-    settings = {
-      show-keyboard-layout = true;
-      #indicator = true;
-      indicator-caps-lock = true;
-      image = vars.wallpaperPath;
-      #screenshots = true;
-      #effect-blur = "20x5";
-      #effect-vignette = "05:05";
-    };
   };
 
  #wayland.windowManager.sway = {

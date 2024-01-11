@@ -39,6 +39,7 @@ in
     ripgrep
 
     # Small Tools (mostly CLI)
+    rcon
     usbutils
     sshfs
     watchexec
@@ -184,11 +185,11 @@ in
     # Pulseaudio
     #pulseaudio
     #pamixer
-    pavucontrol
     alsa-utils
     
     # Other Audio stuff
-    #pwvucontrol
+    pwvucontrol
+    pavucontrol
     #qpwgraph
     #qjackctl
 
