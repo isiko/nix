@@ -12,6 +12,10 @@
 
   # This *should* enable some more sensors
   hardware.sensor.iio.enable = true;
+  hardware.enableAllFirmware = true;
+
+  # Might help with some of the Errors on Boot -> https://askubuntu.com/questions/1272026/acpi-bios-error-bug-could-not-resolve-symbol-sb-pcio-sato-prto-gtf-dssp
+  boot.kernelParams = [ "libdata.noacpi=1" ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
