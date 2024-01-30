@@ -73,9 +73,9 @@ in
     # Some more cool stuff :D
     cmatrix
     cowsay
+    nms       # Text-Apearing Effect
     neofetch
     figlet
-    nms
     timer
     sl
     cava      # Audio Visualizer
@@ -100,12 +100,8 @@ in
     fd
     progress
     ranger
-
-    ## better cat
     bat  
     fx          # JSON viewer
-    ## Diffs
-    delta
     skim
     fzf
 
@@ -121,7 +117,6 @@ in
     wl-mirror
     gimp
     telegram-desktop
-    thunderbird
     inkscape
     vscode
     vlc
@@ -164,19 +159,6 @@ in
     iio-sensor-proxy
     upower
     hyprpicker
-
-    # Pulseaudio
-    pamixer
-    alsa-utils
-    
-    # Other Audio stuff
-    pwvucontrol
-    pavucontrol
-    #qpwgraph
-    #qjackctl
-
-    # Currently just testing this
-    #libsForQt5.kdeconnect-kde
 
     # Keyring
     gcr

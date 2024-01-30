@@ -1,9 +1,16 @@
 {config, pkgs, ...}:
 
 {
-  ## Dennis
-  #security.rtkit.enable = true;
-  #sound.enable = false;
+  environment.systemPackages = with pkgs; [
+    # Pulseaudio
+    pamixer
+    alsa-utils
+    
+    # Other Audio stuff
+    pwvucontrol
+    pavucontrol
+  ];
+  
   services.pipewire = {
     enable = true;
 
@@ -16,6 +23,7 @@
 
     wireplumber.enable = true;
   };
+
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
       bluez_monitor.properties = {
