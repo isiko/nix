@@ -17,22 +17,19 @@ in
   environment.systemPackages = with pkgs; [
     home-manager
 
-    # Theming
-    #nordzy-cursor-theme
-
     # Compilers and Programming stuff
     #rustup
     # cargo
     # rustc
-    nodejs
-    yarn
-    gcc
-    pkg-config
-    gnumake
     jdk21
     jdk17
-    
-    wineWowPackages.stable
+
+    # Not shure if this is needed anymore, remove in next purge
+    #nodejs
+    #yarn
+    #gcc
+    #pkg-config
+    #gnumake
     
     # Latex
     texlab
@@ -43,10 +40,9 @@ in
     neovim
     lua-language-server
     rust-analyzer
-    neovide
-    ripgrep
 
     # Small Tools (mostly CLI)
+    ripgrep
     speedtest-cli
     rcon
     usbutils
@@ -64,7 +60,6 @@ in
     htop
     btop
     git
-    hub
     dig 
     pferd
     mtr
@@ -74,10 +69,6 @@ in
     tmux
     iftop
     mpd
-    yubikey-manager
-
-    todoist
-    ##planify
 
     # Some more cool stuff :D
     cmatrix
@@ -86,11 +77,9 @@ in
     figlet
     nms
     timer
-    peaclock
-    tty-clock
     sl
-    cava # Audio Visualizer
-    cavalier
+    cava      # Audio Visualizer
+    cavalier  # Audio Visualizer
 
     # Moderne Linux Kommandozeilenwerkzeuge
     xsv         # CSV Tool
@@ -108,46 +97,35 @@ in
     viu         # Images in der CMD
     hexyl       # Hexviewer
     glow        # Markdown renderer in der cmd
-    #thefuck     # Correction for Commands
-#    xxh  # Local Shell Config on remote mashines?
-#    oh-my-posh # Shell Theming?
     fd
     progress
-    lynis
-    wtf
     ranger
 
     ## better cat
     bat  
-    #ccat
     fx          # JSON viewer
     ## Diffs
     delta
-    diff-so-fancy
-    dyff
-    ## FuzzyFinder
     skim
     fzf
+
+    # Jetbrains
+    jetbrains-toolbox
+    jetbrains.idea-ultimate
+    jetbrains.datagrip
+    #jetbrains.rust-rover
+    android-studio
 
     # Desktop Programs
     feh
     wl-mirror
     gimp
     telegram-desktop
-    #onthespot
     thunderbird
-    #jetbrains-toolbox
-    android-studio
-    jetbrains.idea-ultimate
-    #jetbrains.rust-rover
-    jetbrains.datagrip
-    gnome.gnome-calendar
-    #teams-for-linux
     inkscape
     vscode
     vlc
     libvlc
-    feh
     gnome.gnome-calculator
     zathura
     audacity
@@ -166,8 +144,6 @@ in
     libreoffice
     networkmanagerapplet
 
-    slides # Terminal Presentation Tool
-
     # Games
     mindustry-wayland
     minecraft
@@ -177,25 +153,20 @@ in
     kitty
 
     # Some Background tools
-    #fprintd
     brightnessctl
     playerctl
     wofi
     swaybg
     wl-clipboard
-    dunst
     libnotify
     pciutils
     xdg-utils
     iio-sensor-proxy
     upower
     hyprpicker
-    #wpaperd
-    #fprintd
 
     # Pulseaudio
-    #pulseaudio
-    #pamixer
+    pamixer
     alsa-utils
     
     # Other Audio stuff
@@ -210,14 +181,6 @@ in
     # Keyring
     gcr
     gnupg # Mostly for ssh
-    frp
-    #pcsclite # Yubikey stuff
-
-    #(steam.override {
-    #   withPrimus = true;
-    #   extraPkgs = pkgs: [ bumblebee glxinfo ];
-    #}).run
-    #(steam.override { withJava = true; })
   ];
 
 }
