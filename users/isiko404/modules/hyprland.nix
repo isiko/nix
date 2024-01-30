@@ -1,3 +1,5 @@
+{config, pkgs, ...}:
+
 let 
   vars = import ../vars.nix;
   
@@ -120,9 +122,9 @@ in
         exec-once = [
             #"waybar"
             #"swaync --config ~/.config/swaync/config.json"
-            "element-desktop --hidden --profile Privat"
-            "element-desktop --hidden --profile KIT"
-            "element-desktop --hidden --profile FSMI"
+            "pkill -f element-desktop && ${pkgs.element-desktop} --hidden --profile Privat"
+            "pkill -f element-desktop && ${pkgs.element-desktop} --hidden --profile KIT"
+            "pkill -f element-desktop && ${pkgs.element-desktop} --hidden --profile FSMI"
             "/usr/lib/polkit-kde-authentication-agent-1"
             "wl-clipboard-history -t"
             "swaybg -m fill -i ${vars.wallpaperPath}"

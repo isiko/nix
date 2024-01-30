@@ -56,29 +56,45 @@ let
             port = 465;
         };
     };
+    farewell = {
+        en = {
+            official = "Sincerly";
+            personal = "Cheers";
+        };
+        de = {
+            official = "Mit freundlichen Grüßen";
+            personal = "LG";
+        };
+    };
     name = {
         full = "Isaak Körner";
         nick = "isiko404";
     };
     signature = {
-        generator = official : nick : lang: {
-            showSignature = "append";
-            delimiter = ''
-                          --
-                        '';
-            text = ''
-                ${
-                    if official then
-                        if lang == "en" then "Sincerly"
-                        else "Mit Freundlichen Grüßen"
-                    else
-                        if lang == "en" then "Cheers"
-                        else "Hau rein"
-                }
-                ${if nick then name.nick else name.full}
-                Website:\t https://isiko404.dev
-                E-Mail: \t mail@isiko404.dev
-                '';
+        generator = { 
+          official,
+          nick,
+          lang,
+          email ? "mail@isiko404.dev",
+          url ? "https://isiko404.dev",
+        } : {
+          showSignature = "attach";
+          delimiter = ''
+                      '';
+          text = ''
+              ${
+                  if official then
+                      if lang == "en" then farewell.en.official
+                      else farewell.de.official
+                  else
+                      if lang == "en" then farewell.en.personal
+                      else farewell.de.personal
+              }
+              ${if nick then name.nick else name.full}
+              --
+              Website: ${url}
+              E-Mail:  ${email}
+              '';
         };
     };
 in
@@ -95,7 +111,11 @@ in
             smtp = isiko404.smtp;
 
             realName = name.nick;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];
@@ -113,7 +133,11 @@ in
             smtp = isiko404.smtp;
 
             realName = name.nick;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];
@@ -131,7 +155,11 @@ in
             smtp = isiko404.smtp;
 
             realName = name.nick;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];
@@ -155,13 +183,20 @@ in
             smtp = KIT.smtp;
 
             realName = name.full;
-            signature = {
-                showSignature = "append";
-                text = "TEST SIGNATURE HOME";
+            signature = signature.generator { 
+                official = true;
+                nick = false; 
+                lang = "de";
+                url = "https://fsmi.org";
+                email = "uyjjh@student.kit.edu";
             };
             thunderbird = {
                 enable = true;
                 profiles = [ "KIT" "Full" ];
+                perIdentitySettings = id : {
+                    "mail.identity.id_${id}.sign_mail" = true;
+                    "mail.identity.id_${id}.encryptionpolicy" = 2;
+                };
             };
         };
 
@@ -175,10 +210,20 @@ in
             smtp = KIT-FSMI.smtp;
 
             realName = name.full;
-            signature = signature.generator true false "de";
+            signature = signature.generator { 
+                official = true;
+                nick = false; 
+                lang = "de";
+                url = "https://fsmi.org";
+                email = "isaak.koerner@fsmi.uni-karlsruhe.de";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "KIT" "Full" ];
+                perIdentitySettings = id : {
+                    "mail.identity.id_${id}.sign_mail" = true;
+                    "mail.identity.id_${id}.encryptionpolicy" = 2;
+                };
             };
         };
 
@@ -193,7 +238,12 @@ in
             smtp = strato.smtp;
 
             realName = name.full;
-            signature = signature.generator true false "de";
+            signature = signature.generator { 
+                official = true;
+                nick = false; 
+                lang = "de";
+                url = "https://informatik-ag.net";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Info-AG" "Full" ];
@@ -211,7 +261,12 @@ in
             smtp = strato.smtp;
 
             realName = name.full;
-            signature = signature.generator true false "de";
+            signature = signature.generator { 
+                official = true;
+                nick = false; 
+                lang = "de";
+                url = "https://informatik-ag.net";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Info-AG" "Full" ];
@@ -229,7 +284,11 @@ in
             #imap = Google.imap;
 
             realName = name.nick;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];
@@ -247,7 +306,11 @@ in
             #imap = Google.imap;
 
             realName = name.full;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];
@@ -265,7 +328,11 @@ in
             #imap = Google.imap;
 
             realName = name.nick;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];
@@ -283,7 +350,11 @@ in
             #imap = Google.imap;
 
             realName = name.nick;
-            signature = signature.generator true true "en";
+            signature = signature.generator { 
+                official = true;
+                nick = true; 
+                lang = "en";
+            };
             thunderbird = {
                 enable = true;
                 profiles = [ "Personal" "Full" ];

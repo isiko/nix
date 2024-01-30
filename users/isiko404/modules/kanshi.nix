@@ -17,7 +17,7 @@ let
     criteria = any;
     width = 3440;
     height = 1440;
-    refreshRate = 50;
+    #refreshRate = 59;
   };
 
   home_top_data = {
@@ -47,14 +47,21 @@ let
   fachschaft_left_data = fachschaft_generic_data "609NTFAF4483";
   fachschaft_right_data = fachschaft_generic_data "305NDGL87831";
 
-  ppi2 = data: (data.width * data.width + data.height * data.height) / data.diagonalLength * data.diagonalLength;
-
-  dataToConfig = data: position: {
+  dataToConfig = {
+    criteria,
+    diagonalLength,
+    width ? 1920,
+    height ? 1080,
+    refreshRate ? null,
+    scale ? 1.0,
+  }:position: {
     position = position;
-    criteria = data.criteria;
-    #scale = 1.0 * integrated_data.height / data.height;
-    scale = 1.0;
-    mode = "${builtins.toString data.width}x${builtins.toString data.height}@${builtins.toString data.refreshRate}";
+    criteria = criteria;
+    scale = scale;
+    mode = if refreshRate != null then
+      "${builtins.toString width}x${builtins.toString height}@${builtins.toString refreshRate}"
+      else 
+        "${builtins.toString width}x${builtins.toString height}";
   };
 
   laptopDisplay = dataToConfig integrated_data;
@@ -83,6 +90,7 @@ in
             criteria = "Sony SONY PJ 0x01010101";
             position = "1920,0";
             status = "enable";
+            scale = 1.0;
             mode = "1920x1080@60";
           }
         ];

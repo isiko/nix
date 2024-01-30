@@ -1,14 +1,31 @@
 { pkgs, ... }:
 
 {
+  # Keyring
   services.gnome.gnome-keyring.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
 
+  # Yubikey
+  environment.systemPackages = [ pkgs.pcscliteWithPolkit ];
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+        if (action.id == "org.debian.pcsc-lite.access_pcsc" &&
+            subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+        }
+        });
+  '';
+  services.pcscd = {
+    enable = true;
+    plugins = [ pkgs.ccid ];
+  };
+  hardware.gpgSmartcards.enable = true;
   services.udev.packages = [ pkgs.yubikey-personalization ];
 
+  # Fingerprint
   services.fprintd = {
     enable = true;
     tod = {
@@ -33,4 +50,5 @@
       u2fAuth = true;
     };
   };
+
 }

@@ -22,6 +22,7 @@ in
     ./modules/mako.nix
     ./modules/swaylock.nix
     ./modules/alacritty.nix
+    ./modules/kdeconnect.nix
   ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
@@ -75,13 +76,13 @@ in
     plugins = [
       (pkgs.eclipses.plugins.buildEclipseUpdateSite rec {
          name = "programming-lecture-eclipse-artemis-${version}";
-         version = "4.7.0";
+         version = "4.8.6";
 
          src = pkgs.fetchFromGitHub {
            owner = "kit-sdq";
            repo = "programming-lecture-eclipse-artemis";
-           rev = "f4d9f9a3af277026e90d31342538c8594cac54ac";
-           hash = "sha256-3JHzpSTRrAyN4K0Ph4zNtO8idRezOZhY7O9OwgNM+XA=";
+           rev = "cf0b6632837462b3943aea9774f7e6dea8514b1a";
+           hash = "sha256-7LEx/AfIsyqzwjqH6VTg14MnsLyrnbkRTJoQ/Hr7L9A=";
          };
 
          meta = with lib; {

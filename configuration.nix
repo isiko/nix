@@ -20,12 +20,13 @@ in
     ./modules/mpd.nix
     ./modules/networking.nix
     ./modules/packages.nix
-    ./modules/postgresql.nix
+    #./modules/postgresql.nix
     ./modules/sound.nix
     #./modules/sway.nix
     ./modules/syncthing.nix
     ./modules/tlp.nix
     ./modules/docker.nix
+    ./modules/restic.nix
     <home-manager/nixos>
   ]; 
 
