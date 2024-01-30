@@ -12,7 +12,7 @@
     settings = {
       mainBar = {
         id = "waybar";
-        height = 30;
+        height = 36;
         margin = "0px 0px 0p 0px";
         name = "top";
         layer = "top";

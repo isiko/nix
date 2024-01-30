@@ -4,6 +4,14 @@ let
   #unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 {
+  # Wacom Tablet
+  services.xserver.wacom.enable = true;
+  hardware.opentabletdriver.enable = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   # Packages
   # Search like this: nix search <PackageName>
   environment.systemPackages = with pkgs; [
@@ -39,6 +47,7 @@ in
     ripgrep
 
     # Small Tools (mostly CLI)
+    speedtest-cli
     rcon
     usbutils
     sshfs
@@ -63,9 +72,9 @@ in
     slurp
     file
     tmux
-    #busybox
     iftop
     mpd
+    yubikey-manager
 
     todoist
     ##planify
@@ -80,6 +89,8 @@ in
     peaclock
     tty-clock
     sl
+    cava # Audio Visualizer
+    cavalier
 
     # Moderne Linux Kommandozeilenwerkzeuge
     xsv         # CSV Tool
@@ -123,7 +134,7 @@ in
     wl-mirror
     gimp
     telegram-desktop
-    onthespot
+    #onthespot
     thunderbird
     #jetbrains-toolbox
     android-studio
@@ -146,7 +157,7 @@ in
     keepassxc
     firefox
     signal-desktop
-    #obsidian
+    obsidian
     gnome.nautilus
     gnome.sushi # Some stuff for nautilus
     rnote
@@ -194,12 +205,13 @@ in
     #qjackctl
 
     # Currently just testing this
-    libsForQt5.kdeconnect-kde
+    #libsForQt5.kdeconnect-kde
 
     # Keyring
     gcr
     gnupg # Mostly for ssh
     frp
+    #pcsclite # Yubikey stuff
 
     #(steam.override {
     #   withPrimus = true;
@@ -207,4 +219,5 @@ in
     #}).run
     #(steam.override { withJava = true; })
   ];
+
 }
