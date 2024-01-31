@@ -44,7 +44,7 @@ in
             "$mainMod, Space, exec, alacritty"
             "$mainMod, B, exec, firefox"
             "$mainMod, N, exec, obsidian"
-            "$mainMod, D, exec, discordcanary"
+            "$mainMod, D, exec, ${pkgs.discord}/bin/discord"
             "$mainMod, E, exec, thunderbird"
             "$mainMod, S, exec, nautilus"
 
@@ -119,16 +119,16 @@ in
             "$mainMod, mouse:272, movewindow"
             "$mainMod, mouse:273, resizewindow"
         ];
-        exec-once = [
+        exec = [
             #"waybar"
             #"swaync --config ~/.config/swaync/config.json"
-            "pkill -f element-desktop && ${pkgs.element-desktop} --hidden --profile Privat"
-            "pkill -f element-desktop && ${pkgs.element-desktop} --hidden --profile KIT"
-            "pkill -f element-desktop && ${pkgs.element-desktop} --hidden --profile FSMI"
+            "${pkgs.element-desktop}/bin/element-desktop --hidden --profile Privat"
+            "${pkgs.element-desktop}/bin/element-desktop --hidden --profile KIT"
+            "${pkgs.element-desktop}/bin/element-desktop --hidden --profile FSMI"
             "/usr/lib/polkit-kde-authentication-agent-1"
             "wl-clipboard-history -t"
             "swaybg -m fill -i ${vars.wallpaperPath}"
-            "discordcanary"
+            "${pkgs.discord}/bin/discord"
             "blueman-applet"
             "nm-applet"
             #"flameshot"
