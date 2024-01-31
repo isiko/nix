@@ -29,7 +29,7 @@ in
     #yarn
     #gcc
     #pkg-config
-    #gnumake
+    gnumake
     
     # Latex
     texlab
@@ -42,6 +42,7 @@ in
     rust-analyzer
 
     # Small Tools (mostly CLI)
+    tree
     ripgrep
     speedtest-cli
     rcon
@@ -113,6 +114,7 @@ in
     android-studio
 
     # Desktop Programs
+    scribus
     feh
     wl-mirror
     gimp
@@ -134,7 +136,7 @@ in
     gnome.nautilus
     gnome.sushi # Some stuff for nautilus
     rnote
-    discord-canary # The normal discord package didn't work for me, it would always log me out. I'll maby switch back in the future
+    #discord-canary # The normal discord package didn't work for me, it would always log me out. I'll maby switch back in the future
     google-chrome
     libreoffice
     networkmanagerapplet

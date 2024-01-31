@@ -11,6 +11,7 @@ in
 {
   # Defaults
   users.defaultUserShell = pkgs.zsh;
+  home-manager.useGlobalPkgs = true;
 
   # Users
   home-manager.users.isiko404 	= isiko404.home;
