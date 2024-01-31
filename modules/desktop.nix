@@ -6,17 +6,19 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.configPackages = [ pkgs.xdg-desktop-portal-gtk ];
 
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
     #enableNvidiaPatches = true;
   };
+
+  nixpkgs.overlays = [
+   (self: super: {
+     waybar = super.waybar.overrideAttrs (oldAttrs: {
+       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+     });
+   })
+  ];
 
   services.greetd = {
     enable = true;

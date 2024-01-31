@@ -8,26 +8,6 @@
     enableSSHSupport = true;
   };
 
-  # Yubikey
-  environment.systemPackages = [ 
-    pkgs.pcscliteWithPolkit.out
-    pkgs.yubikey-manager
-  ];
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-        if (action.id == "org.debian.pcsc-lite.access_pcsc" &&
-            subject.isInGroup("wheel")) {
-        return polkit.Result.YES;
-        }
-        });
-  '';
-  services.pcscd = {
-    enable = true;
-    plugins = [ pkgs.ccid ];
-  };
-  hardware.gpgSmartcards.enable = true;
-  services.udev.packages = [ pkgs.yubikey-personalization ];
-
   # Fingerprint
   services.fprintd = {
     enable = true;
