@@ -1,6 +1,5 @@
 {
   # Networking
-  networking.hostName = "laptop"; # Define your hostname.
   networking.networkmanager.enable = true;
   # Proxy (maby set that up in the future?
   # networking.proxy.default = "http://user:password@proxy:port/";

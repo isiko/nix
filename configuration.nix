@@ -5,33 +5,42 @@
 { pkgs, ... }:
 
 let
-  # unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  # home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  modules = {
+    default = [
+      ./users/setup.nix
+      <home-manager/nixos>
+      ./modules/packages.nix
+
+      ./modules/docker.nix
+      ./modules/networking.nix
+      ./modules/restic.nix
+      ./modules/syncthing.nix
+    ];
+    desktop = [
+      ./modules/auth.nix
+      ./modules/bluetooth.nix
+      ./modules/desktop.nix
+      ./modules/fonts.nix
+      ./modules/locale.nix
+      ./modules/mpd.nix
+      ./modules/sound.nix
+      ./modules/steam.nix
+      #./modules/sway.nix
+      #./modules/tlp.nix
+      ./modules/yubikey.nix
+    ];
+    server = [
+      #./modules/postgresql.nix
+    ];
+  };
+  hosts = {
+    laptop = modules.default ++ modules.desktop ++ [ ];
+  };
 in
 {
-  imports = [
-    ./users/setup.nix
-    ./modules/hardware-configuration.nix 
-    ./modules/bluetooth.nix
-    ./modules/bootloader.nix
-    ./modules/desktop.nix
-    ./modules/auth.nix
-    ./modules/locale.nix
-    ./modules/mpd.nix
-    ./modules/networking.nix
-    ./modules/packages.nix
-    #./modules/postgresql.nix
-    ./modules/sound.nix
-    #./modules/sway.nix
-    ./modules/syncthing.nix
-    ./modules/tlp.nix
-    ./modules/docker.nix
-    ./modules/restic.nix
-    ./modules/steam.nix
-    ./modules/fonts.nix
-    ./modules/yubikey.nix
-    <home-manager/nixos>
-  ]; 
+  imports = hosts.laptop ++ [
+    ./modules/hardware-config/laptop.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
