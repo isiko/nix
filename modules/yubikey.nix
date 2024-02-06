@@ -20,6 +20,5 @@
     plugins = [ pkgs.ccid ];
   };
 
-  hardware.gpgSmartcards.enable = true;
   services.udev.packages = [ pkgs.yubikey-personalization ];
 }

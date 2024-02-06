@@ -44,6 +44,7 @@ in
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
+  hardware.gpgSmartcards.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
