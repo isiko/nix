@@ -8,8 +8,8 @@ let
   modules = {
     default = [
       <home-manager/nixos>
-      <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-base.nix>
-      <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
+      #<nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-base.nix>
+      #<nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
       ./users/setup.nix
       ./modules/packages.nix
 

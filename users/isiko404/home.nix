@@ -81,7 +81,7 @@ in
          src = pkgs.fetchFromGitHub {
            owner = "kit-sdq";
            repo = "programming-lecture-eclipse-artemis";
-           rev = "cf0b6632837462b3943aea9774f7e6dea8514b1a";
+           rev = "b92d70c5e81b71db47ba18a32c8b99bc07a93d52";
            hash = "sha256-7LEx/AfIsyqzwjqH6VTg14MnsLyrnbkRTJoQ/Hr7L9A=";
          };
 

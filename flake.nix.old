@@ -1,8 +1,18 @@
 {
   description = "Minimal NixOS installation media";
-  inputs.nixos.url = "nixpkgs/23.11-beta";
-  outputs = { self, nixos }: {
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
+  outputs = { self, nixos, home-manager}: {
     nixosConfigurations = {
+      laptop = nixos.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (import ./configuration.nix)
+        ];
+      };
       exampleIso = nixos.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
