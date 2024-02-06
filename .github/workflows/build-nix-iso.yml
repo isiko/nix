@@ -1,5 +1,8 @@
 name: build-nix-iso
 on:
+  push:
+    branches:
+      - 'main'
   workflow_dispatch:
     inputs:
       target:
@@ -20,15 +23,10 @@ jobs:
       run: nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - name: Update Channels
       run: nix-channel --update
-    - name: Show Channels
     - name: Check nix.conf
       run: cat /etc/nix/nix.conf
     - name: Build NixOS Image
-      run: |
-        nix-build '<nixpkgs/nixos>'  \
-          -A config.system.build.isoImage \
-          -I nixos-config=./configuration.nix \
-          --option sandbox false
+      run: nix build .#nixosConfigurations.exampleIso.config.system.build.isoImage
     - uses: actions/upload-artifact@v3
       with:
         name: nixos.iso

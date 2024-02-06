@@ -7,8 +7,10 @@
 let
   modules = {
     default = [
-      ./users/setup.nix
       <home-manager/nixos>
+      <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-base.nix>
+      <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
+      ./users/setup.nix
       ./modules/packages.nix
 
       ./modules/docker.nix
