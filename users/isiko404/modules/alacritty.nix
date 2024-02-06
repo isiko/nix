@@ -4,6 +4,53 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      env = {
+        TERM = "xterm-256color";
+      };
+      scrolling = {
+        history = 5000;
+      };
+      bell = {
+        animation = "Ease";
+        duration = 100;
+        color = "0xffffff";
+      };
+      window = {
+        dynamic_padding = false;
+        opacity = 1;
+        title = "Alacritty";
+        class = {
+          general = "Alacritty";
+          instance = "Alacritty";
+        };
+        padding = {
+          x = 0;
+          y = 0;
+        };
+      };
+      font = {
+        size = 10;
+        bold = {
+          family = "Inconsolata Nerd Font";
+          style = "Regular";
+        };
+        bold_italic = {
+          family = "Inconsolata Nerd Font";
+          style = "Bold Italic";
+        };
+        italic = {
+          family = "Inconsolata Nerd Font";
+          style = "Italic";
+        };
+        normal = {
+          family = "Inconsolata Nerd Font";
+          style = "Regular";
+        };
+        offset = {
+          x = 0;
+          y = 0;
+        };
+      };
       colors = {
         draw_bold_text_with_bright_colors = true;
         bright = {
@@ -46,32 +93,6 @@
         selection = {
           background = "#d9d9d9";
           text = "#202020";
-        };
-      };
-      env = {
-        TERM = "xterm-256color";
-      };
-      font = {
-        size = 10;
-        bold = {
-          family = "Inconsolata Nerd Font";
-          style = "Regular";
-        };
-        bold_italic = {
-          family = "Inconsolata Nerd Font";
-          style = "Bold Italic";
-        };
-        italic = {
-          family = "Inconsolata Nerd Font";
-          style = "Italic";
-        };
-        normal = {
-          family = "Inconsolata Nerd Font";
-          style = "Regular";
-        };
-        offset = {
-          x = 0;
-          y = 0;
         };
       };
       #schemes = {
@@ -172,22 +193,6 @@
       #    };
       #  };
       #};
-      scrolling = {
-        history = 5000;
-      };
-      window = {
-        dynamic_padding = false;
-        opacity = 1;
-        title = "Alacritty";
-        class = {
-          general = "Alacritty";
-          instance = "Alacritty";
-        };
-        padding = {
-          x = 0;
-          y = 0;
-        };
-      };
     };
   };
 }

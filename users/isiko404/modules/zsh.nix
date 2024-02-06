@@ -12,6 +12,7 @@
         pdf = "zathura";
         vi = "nvim";
         vim = "neovide";
+        bell = "echo -e \"\\a\"";
 
         dig = "q";
         wtf = "wtfutil";
