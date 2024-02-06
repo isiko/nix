@@ -27,7 +27,7 @@ let
       ./modules/steam.nix
       #./modules/sway.nix
       #./modules/tlp.nix
-      ./modules/yubikey.nix
+      #./modules/yubikey.nix # Just for editing
     ];
     server = [
       #./modules/postgresql.nix
