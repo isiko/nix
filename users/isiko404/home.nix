@@ -70,32 +70,6 @@ in
     };
   };
 
-  programs.eclipse = {
-    enable = true;
-    package = pkgs.eclipses.eclipse-java;
-    plugins = [
-      (pkgs.eclipses.plugins.buildEclipseUpdateSite rec {
-         name = "programming-lecture-eclipse-artemis-${version}";
-         version = "4.8.6";
-
-         src = pkgs.fetchFromGitHub {
-           owner = "kit-sdq";
-           repo = "programming-lecture-eclipse-artemis";
-           rev = "b92d70c5e81b71db47ba18a32c8b99bc07a93d52";
-           hash = "sha256-7LEx/AfIsyqzwjqH6VTg14MnsLyrnbkRTJoQ/Hr7L9A=";
-         };
-
-         meta = with lib; {
-           homepage = "https://github.com/kit-sdq/programming-lecture-eclipse-artemis";
-           description = "Eclipse-Plugin for grading with the artemis project";
-           sourceProvenance = with sourceTypes; [binaryBytecode];
-           license = licenses.epl20;
-           platforms = platforms.all;
-         };
-       })
-    ];
-  };
-
  #wayland.windowManager.sway = {
  #  enable = true;
  #  config = rec {
