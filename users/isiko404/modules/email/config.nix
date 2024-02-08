@@ -71,12 +71,17 @@ let
         nick = "isiko404";
     };
     signature = {
+        contact-info = {
+          email ? "mail@isiko404.dev",
+          url ? "https://isiko404.dev",
+        }: ''
+        Website: ${url}
+        E-Mail:  ${email}'';
         generator = { 
           official,
           nick,
           lang,
-          email ? "mail@isiko404.dev",
-          url ? "https://isiko404.dev",
+          info ? signature.contact-info {}
         } : {
           showSignature = "attach";
           delimiter = ''
@@ -91,10 +96,9 @@ let
                       else farewell.de.personal
               }
               ${if nick then name.nick else name.full}
+              
               --
-              Website: ${url}
-              E-Mail:  ${email}
-              '';
+              ${info}'';
         };
     };
 in
@@ -112,7 +116,7 @@ in
 
             realName = name.nick;
             signature = signature.generator { 
-                official = true;
+                official = false;
                 nick = true; 
                 lang = "en";
             };
@@ -187,8 +191,10 @@ in
                 official = true;
                 nick = false; 
                 lang = "de";
-                url = "https://fsmi.org";
-                email = "uyjjh@student.kit.edu";
+                info = signature.contact-info {
+                  url = "https://fsmi.org";
+                  email = "uyjjh@student.kit.edu";
+                };
             };
             thunderbird = {
                 enable = true;
@@ -214,8 +220,11 @@ in
                 official = true;
                 nick = false; 
                 lang = "de";
-                url = "https://fsmi.org";
-                email = "isaak.koerner@fsmi.uni-karlsruhe.de";
+                info = ''
+                Fachschaft Mathematik/Informatik
+                Karlsruher Institut für Technologie (KIT)
+                https://www.fsmi.uni-karlsruhe.de
+                '';
             };
             thunderbird = {
                 enable = true;
@@ -242,7 +251,9 @@ in
                 official = true;
                 nick = false; 
                 lang = "de";
-                url = "https://informatik-ag.net";
+                info = signature.contact-info {
+                  url = "https://informatik-ag.net";
+                };
             };
             thunderbird = {
                 enable = true;
@@ -265,7 +276,9 @@ in
                 official = true;
                 nick = false; 
                 lang = "de";
-                url = "https://informatik-ag.net";
+                info = signature.contact-info {
+                  url = "https://informatik-ag.net";
+                };
             };
             thunderbird = {
                 enable = true;
