@@ -1,5 +1,6 @@
 {
   # Networking
+  networking.wireless.enable = false;
   networking.networkmanager.enable = true;
   # Proxy (maby set that up in the future?
   # networking.proxy.default = "http://user:password@proxy:port/";

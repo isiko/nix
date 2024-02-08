@@ -26,7 +26,7 @@ jobs:
     - name: Check nix.conf
       run: cat /etc/nix/nix.conf
     - name: Build NixOS Image
-      run: nix build .#nixosConfigurations.exampleIso.config.system.build.isoImage
+      run: nix build .#nixosConfigurations.iso.config.system.build.isoImage
     - uses: actions/upload-artifact@v3
       with:
         name: nixos.iso

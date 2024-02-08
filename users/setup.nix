@@ -1,21 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, home-manager, ... }:
 
-let 
-  isiko-imp = import ./isiko404/user.nix;
-  isiko404 = {
-    home = import ./isiko404/home.nix;
-    global = isiko-imp;
-    #global = isiko-loc;
-  };
-in
 {
-  # Defaults
-  users.defaultUserShell = pkgs.zsh;
-  home-manager.useGlobalPkgs = true;
-
   # Users
-  home-manager.users.isiko404 	= isiko404.home;
-  users.users.isiko404 		= {
+  users.users.isiko404 = {
     isNormalUser = true;
     description = "Isaak";
     extraGroups = [ 
