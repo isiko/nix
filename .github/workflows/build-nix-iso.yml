@@ -1,15 +1,10 @@
 name: build-nix-iso
 on:
-  push:
-    branches:
-      - 'main'
   workflow_dispatch:
-    inputs:
-      target:
-        description: Target builder folder containing a default.nix file to build an ISO
-        required: true
-        default: laptop
-      
+  #push:
+  #  branches:
+  #    - 'main'
+
 jobs: 
   build-target-image:
     name: Build target image
