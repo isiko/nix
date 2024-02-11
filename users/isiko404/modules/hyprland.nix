@@ -120,7 +120,7 @@ in
             "$mainMod, mouse:273, resizewindow"
         ];
         exec = [
-            #"waybar"
+            "${pkgs.waybar}/bin/waybar"
             #"swaync --config ~/.config/swaync/config.json"
             "${pkgs.element-desktop}/bin/element-desktop --hidden --profile Privat"
             "${pkgs.element-desktop}/bin/element-desktop --hidden --profile KIT"

@@ -1,13 +1,29 @@
 { pkgs, ...}:
 
 {
+  systemd.user.services.waybar = {
+    Unit = {
+      Description =
+        "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
+      Documentation = "https://github.com/Alexays/Waybar/wiki";
+      #PartOf = [ "graphical-session.target" ];
+      #After = [ "graphical-session-pre.target" ];
+    };
+
+    Service = {
+      ExecStart = "${pkgs.waybar}/bin/waybar";
+      ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
+      Restart = "on-failure";
+      KillMode = "mixed";
+    };
+  };
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    systemd = {
-      enable = true;
-      target = "graphical-session.target";
-    };
+    #systemd = {
+    #  enable = true;
+    #  target = "graphical-session.target";
+    #};
 
     settings = {
       mainBar = {
