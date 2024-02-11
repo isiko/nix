@@ -4,43 +4,7 @@
 
 { pkgs, ... }:
 
-let
-  modules = {
-    default = [
-      ./users/setup.nix
-      ./modules/packages.nix
-
-      ./modules/docker.nix
-      ./modules/networking.nix
-      ./modules/restic.nix
-      ./modules/syncthing.nix
-    ];
-    desktop = [
-      ./modules/auth.nix
-      ./modules/bluetooth.nix
-      ./modules/desktop.nix
-      ./modules/fonts.nix
-      ./modules/locale.nix
-      ./modules/mpd.nix
-      ./modules/sound.nix
-      ./modules/steam.nix
-      #./modules/sway.nix
-      #./modules/tlp.nix
-      #./modules/yubikey.nix # Just for editing
-    ];
-    server = [
-      #./modules/postgresql.nix
-    ];
-  };
-  hosts = {
-    laptop = modules.default ++ modules.desktop ++ [ ];
-  };
-in
 {
-  imports = hosts.laptop ++ [
-    ./modules/hardware-config/laptop.nix
-  ];
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   hardware.gpgSmartcards.enable = true;
