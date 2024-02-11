@@ -25,7 +25,7 @@ in
     jdk17
 
     # Not shure if this is needed anymore, remove in next purge
-    #nodejs
+    nodejs # Needed for Copilot
     #yarn
     #gcc
     #pkg-config
