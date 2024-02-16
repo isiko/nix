@@ -144,6 +144,7 @@ in
     # Games
     mindustry-wayland
     minecraft
+    prismlauncher
 
     # Terminals
     alacritty
