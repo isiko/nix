@@ -29,7 +29,7 @@
         };
       };
       font = {
-        size = 10;
+        size = 9;
         bold = {
           family = "Inconsolata Nerd Font";
           style = "Regular";

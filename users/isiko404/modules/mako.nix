@@ -16,7 +16,7 @@
     backgroundColor = "#DE4040FF";
     anchor = "top-right";
     font = "monospace 8";
-    layer = "overlay";
+    layer = "top";
     #padding = "30";
 
     icons = true;
