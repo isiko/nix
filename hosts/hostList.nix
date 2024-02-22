@@ -1,0 +1,8 @@
+[
+    {
+        name = "laptop";
+    }
+    {
+        name = "desktop";
+    }
+]

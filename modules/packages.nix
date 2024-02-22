@@ -111,6 +111,7 @@ in
     android-studio
 
     # Desktop Programs
+    webcord
     scribus
     feh
     wl-mirror
@@ -128,6 +129,7 @@ in
     spotify
     keepassxc
     firefox
+    chromium
     signal-desktop
     obsidian
     gnome.nautilus
