@@ -84,7 +84,7 @@
 
         if command -v figlet &> /dev/null
         then
-            figlet "$(whoami)@$(hostnamectl hostname)"
+            figlet "$(whoami)@$(hostnamectl hostname)" -w "$(tput cols)"
         fi
         
         unset SSH_AGENT_PID

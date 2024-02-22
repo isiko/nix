@@ -64,8 +64,6 @@ in
     dig 
     pferd
     mtr
-    grim
-    slurp
     file
     tmux
     iftop
@@ -161,7 +159,6 @@ in
     xdg-utils
     iio-sensor-proxy
     upower
-    hyprpicker
 
     # Keyring
     gcr

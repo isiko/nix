@@ -52,13 +52,8 @@ let
 
     # Catppuccin
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Blue-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
-        size = "compact";
-        tweaks = [ "rimless" "black" ];
-        variant = "macchiato";
-      };
+      name = "Graphite-Dark";
+      package = pkgs.graphite-gtk-theme;
     };
   };
 }

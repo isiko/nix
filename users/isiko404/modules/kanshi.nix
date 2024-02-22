@@ -53,7 +53,7 @@ let
     width ? 1920,
     height ? 1080,
     refreshRate ? null,
-    scale ? 1.0,
+    scale ? null,
   }:position: {
     position = position;
     criteria = criteria;
@@ -108,6 +108,13 @@ in
           (home_top "2680,0")
           (home_wide "1920,1080")
           (laptopDisplay "0,1900")
+        ];
+      };
+      home_desktop = {
+        ## Horizontal
+        outputs = [
+          (home_top "2680,0")
+          (home_wide "1920,1080")
         ];
       };
       fachschaft = {
