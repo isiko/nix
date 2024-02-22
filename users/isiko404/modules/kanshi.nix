@@ -9,6 +9,7 @@ let
     width = 1920;
     height = 1080;
     refreshRate = 60;
+    scale = 1.0;
   };
 
   home_wide_data = {
