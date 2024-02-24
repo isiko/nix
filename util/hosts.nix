@@ -1,4 +1,4 @@
-{nixpkgs, home-manager}:
+{inputs}:
 
 let 
     modules = {
@@ -25,7 +25,7 @@ let
            #../modules/postgresql.nix
        ];
        home-manager = [
-           home-manager.nixosModules.home-manager
+           inputs.home-manager.nixosModules.home-manager
            {
                home-manager.useGlobalPkgs = true;
                home-manager.useUserPackages = true;
@@ -33,8 +33,15 @@ let
            }
        ];
    };
-    mkHost = {name, customModules ? []}: nixpkgs.lib.nixosSystem {
+    mkHost = {name, cores,  customModules ? []}: inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+            inherit name;
+            inherit customModules;
+            inherit cores;
+
+            inherit inputs;
+        };
         modules = 
             customModules ++ 
             modules.default ++

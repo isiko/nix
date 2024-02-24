@@ -9,7 +9,7 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = 
-    (import ./util/hosts.nix { nixpkgs = nixpkgs; home-manager = home-manager; }).sysConfigs //
+    (import ./util/hosts.nix { inputs = inputs; }).sysConfigs //
     {
         # Custom Config here
     };
