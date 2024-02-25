@@ -47,7 +47,7 @@ in
             "$mainMod, D, exec, ${pkgs.discord}/bin/discord"
             "$mainMod, E, exec, thunderbird"
             "$mainMod, S, exec, nautilus"
-            "$mainMod, P, exec, ${pkgs.grim} -g \"$(${pkgs.slurp})\" - | wl-copy"
+            "$mainMod, P, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | wl-copy"
             "$mainMod ALT, P, exec, hyprpicker -a"
 
             "$mainMod, C, killactive,"
