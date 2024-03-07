@@ -15,6 +15,7 @@ in
   # Packages
   # Search like this: nix search <PackageName>
   environment.systemPackages = with pkgs; [
+    exfat
     home-manager
 
     # Compilers and Programming stuff
@@ -69,6 +70,7 @@ in
 
     # Some more cool stuff :D
     cmatrix
+    asciiquarium
     cowsay
     nms       # Text-Apearing Effect
     neofetch

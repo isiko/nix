@@ -53,6 +53,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/media/blk" = {
+    device = "/dev/disk/by-uuid/8B96-D3BC";
+    fsType = "exfat";
+  };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/4802-9B2C";
       fsType = "vfat";
