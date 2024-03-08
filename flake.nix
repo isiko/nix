@@ -15,6 +15,7 @@
           ./configuration.nix
             ./users/setup.nix
             ./modules/packages.nix
+            ./modules/filesystems.nix
 
             ./modules/docker.nix
             ./modules/networking.nix

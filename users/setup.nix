@@ -12,6 +12,7 @@
       "pipewire"
       "adbusers"
       "docker"
+      "storage"
      ];
      shell = pkgs.zsh;
      packages = with pkgs; [];
