@@ -84,7 +84,7 @@ in
           (laptopDisplay "0,0")
         ];
       };
-      presentation = {
+      InfoBauKeller = {
         outputs = [
           (laptopDisplay "0,0")
           {
@@ -93,6 +93,19 @@ in
             status = "enable";
             scale = 1.0;
             mode = "1920x1080@60";
+          }
+        ];
+      };
+      InformatiKOM = {
+        outputs = [
+          (laptopDisplay "0,0")
+          {
+            criteria = "Samsung Electric Company SyncMaster H1AK500000";
+            #criteria = "HDMI-A-1";
+            position = "1920,0";
+            status = "enable";
+            scale = 1.0;
+            mode = "3840x2160@30";
           }
         ];
       };
