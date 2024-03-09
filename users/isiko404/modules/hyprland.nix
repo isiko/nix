@@ -196,27 +196,27 @@ in
         #env = "XCURSOR_SIZE,24";
     };
     extraConfig = ''
-        ### Fachschaft
-        #monitor=eDP-1,1920x1080@60,960x1200,1
-        #monitor=desc:LG Electronics 24EB23 609NTFAF4483,1920x1200@60,0x0,1
-        #monitor=desc:LG Electronics 24EB23 305NDGL87831,1920x1200@60,1920x0,1
-        #
-        ### Home (Vertical)
-        #monitor=DP-3,1920x1080@60, 760x0, 1
-        #monitor=DP-4,3440x1440@60, 0x1080, 1
-        ##monitor=desc:'GIGA-BYTE TECHNOLOGY CO., LTD. G34WQC A',3440x1440@60, 0x1080, 1
-        #monitor=eDP-1,1920x1080@60,760x2520,1
+        # ## Fachschaft
+        # monitor=eDP-1,1920x1080@60,960x1200,1
+        # monitor=desc:LG Electronics 24EB23 609NTFAF4483,1920x1200@60,0x0,1
+        # monitor=desc:LG Electronics 24EB23 305NDGL87831,1920x1200@60,1920x0,1
+        # 
+        # ## Home (Vertical)
+        # monitor=DP-3,1920x1080@60, 760x0, 1
+        # monitor=DP-4,3440x1440@60, 0x1080, 1
+        # #monitor=desc:'GIGA-BYTE TECHNOLOGY CO., LTD. G34WQC A',3440x1440@60, 0x1080, 1
+        # monitor=eDP-1,1920x1080@60,760x2520,1
 
-        ##monitor=HDMI-A-1,3440x1440@60, 0x1080, 1
-        ##monitor=eDP-1,1920x1080@60,760x2520,1
-        #
-        ### Home (Horizontal)
-        ##monitor=eDP-1,1920x1080@60,0x720,1
-        ##monitor=HDMI-A-1,3440x1440@60, 1920x0, 1
+        # #monitor=HDMI-A-1,3440x1440@60, 0x1080, 1
+        # #monitor=eDP-1,1920x1080@60,760x2520,1
+        # 
+        # ## Home (Horizontal)
+        # #monitor=eDP-1,1920x1080@60,0x720,1
+        # #monitor=HDMI-A-1,3440x1440@60, 1920x0, 1
 
-        ### Standard (Expand)
-        ##monitor=DP-1,1920x1080@60,0x0,1
-        ##monitor=,preferred,auto,1
+        # ## Standard (Expand)
+        # #monitor=DP-1,1920x1080@60,0x0,1
+        # #monitor=,preferred,auto,1
     '';
   };
 }
