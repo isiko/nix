@@ -55,7 +55,7 @@ in
             "$mainMod, V, togglefloating,"
             "$mainMod, X, exec, killall wofi || wofi -S drun -M contains -IimbG"
             #"$mainMod, X, exec, killall rofi || rofi -show drun -show-icons -theme nord" #~/.config/rofi/global/rofi.rasi
-            "$mainMod, Y, exec, swaylock" # -i /home/isiko404/Pictures/wallpaper/unifest.png
+            "$mainMod, Y, exec, ${pkgs.hyprlock}/bin/hyprlock" # -i /home/isiko404/Pictures/wallpaper/unifest.png
             "$mainMod, P, exec, hyprpicker -a"
 
             "$mainMod CONTROL, L, workspace, +1"

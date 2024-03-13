@@ -24,6 +24,7 @@ in
     ./modules/alacritty.nix
     ./modules/kdeconnect.nix
     ./modules/wofi.nix
+    ./modules/hyprlock.nix
   ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
