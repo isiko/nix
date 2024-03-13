@@ -79,6 +79,7 @@ in
     sl
     cava      # Audio Visualizer
     cavalier  # Audio Visualizer
+    asciiquarium
 
     # Moderne Linux Kommandozeilenwerkzeuge
     xsv         # CSV Tool
