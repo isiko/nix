@@ -24,30 +24,33 @@ let
        server = [
            #../modules/postgresql.nix
        ];
-       home-manager = [
-           inputs.home-manager.nixosModules.home-manager
-           {
-               home-manager.useGlobalPkgs = true;
-               home-manager.useUserPackages = true;
-               home-manager.users.isiko404 = import ../users/isiko404/home.nix;
-           }
-       ];
    };
     mkHost = {name, cores,  customModules ? []}: inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
             inherit name;
-            inherit customModules;
             inherit cores;
 
+            inherit customModules;
             inherit inputs;
         };
         modules = 
             customModules ++ 
             modules.default ++
             modules.desktop-environment ++
-            modules.home-manager ++ 
             [
+                inputs.home-manager.nixosModules.home-manager
+                {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.isiko404 = import ../users/isiko404/home.nix;
+                    home-manager.extraSpecialArgs = {
+                        #inherit name; # No Idea why I can't inherit this...
+                        inherit cores;
+
+                        inherit inputs;
+                    };
+                }
                 ../configuration.nix
                 ../users/setup.nix
                 ../modules/packages.nix

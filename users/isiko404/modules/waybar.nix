@@ -1,8 +1,5 @@
-{ pkgs, ...}:
+{ pkgs, cores, ...}:
 
-let
-  cores = 12;
-in
 {
   systemd.user.services.waybar = {
     Unit = {
