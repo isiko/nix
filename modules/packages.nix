@@ -22,7 +22,6 @@ in
     # cargo
     # rustc
     jdk21
-    jdk17
 
     # Not shure if this is needed anymore, remove in next purge
     nodejs # Needed for Copilot
@@ -60,7 +59,6 @@ in
     wget
     htop
     btop
-    git
     dig 
     pferd
     mtr
@@ -138,7 +136,6 @@ in
     #discord-canary # The normal discord package didn't work for me, it would always log me out. I'll maby switch back in the future
     google-chrome
     libreoffice
-    networkmanagerapplet
 
     # Games
     mindustry-wayland
@@ -146,14 +143,9 @@ in
     prismlauncher
 
     # Terminals
-    alacritty
     kitty
 
     # Some Background tools
-    brightnessctl
-    playerctl
-    wofi
-    swaybg
     wl-clipboard
     libnotify
     pciutils

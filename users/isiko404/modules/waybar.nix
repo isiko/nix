@@ -85,7 +85,7 @@
           "tooltip-format-wifi" = "{ipaddr}/{cidr}\n{signalStrength}%: ({bandwidthUpBits} | {bandwidthDownBits})";
           "tooltip-format-ethernet" = "{ipaddr}/{cidr}\n{signalStrength}%: ({bandwidthUpBits} | {bandwidthDownBits})\n{ifname}";
           "tooltip-format-disconnected" = "";
-          "on-click" = "alacritty --command nmtui";
+          "on-click" = "${pkgs.alacritty}/bin/alacritty --command nmtui";
           "tooltip" = true;
         };
         "backlight" = {
@@ -137,7 +137,6 @@
           "format" = "{percentage}% ";
           "tooltip-format" = "{used:0.1f}G used\n{avail:0.1f}G available\n{total:0.1f}G total";
           "format-alt-click" = "click-right";
-          "on-click" = "~/.config/waybar/custom/stats.sh memory";
           "states" = {
             "low" = 0;
             "mid" = 50;

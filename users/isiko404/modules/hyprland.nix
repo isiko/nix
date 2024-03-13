@@ -41,22 +41,21 @@ in
         };
         bind = [
             #"$mainMod, Space, exec, kitty"
-            "$mainMod, Space, exec, alacritty"
+            "$mainMod, Space, exec, ${pkgs.alacritty}/bin/alacritty"
             "$mainMod, B, exec, firefox"
             "$mainMod, N, exec, obsidian"
             "$mainMod, D, exec, ${pkgs.discord}/bin/discord"
             "$mainMod, E, exec, thunderbird"
             "$mainMod, S, exec, nautilus"
             "$mainMod, P, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | wl-copy"
-            "$mainMod ALT, P, exec, hyprpicker -a"
+            "$mainMod ALT, P, exec, ${pkgs.hyprpicker}/bin/hyprpicker -a"
 
             "$mainMod, C, killactive,"
             "$mainMod, M, exit,"
             "$mainMod, V, togglefloating,"
-            "$mainMod, X, exec, killall wofi || wofi -S drun -M contains -IimbG"
+            "$mainMod, X, exec, killall wofi || ${pkgs.wofi}/bin/wofi -S drun -M contains -IimbG"
             #"$mainMod, X, exec, killall rofi || rofi -show drun -show-icons -theme nord" #~/.config/rofi/global/rofi.rasi
             "$mainMod, Y, exec, ${pkgs.hyprlock}/bin/hyprlock" # -i /home/isiko404/Pictures/wallpaper/unifest.png
-            "$mainMod, P, exec, hyprpicker -a"
 
             "$mainMod CONTROL, L, workspace, +1"
             "$mainMod CONTROL, H, workspace, -1"
@@ -100,12 +99,12 @@ in
             "$mainMod SHIFT, TAB, layoutmsg, cycleprev"
             "$mainMod, A, layoutmsg, swapwithmaster"
 
-            ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
-            ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
-            ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-            ",XF86AudioPlay, exec, playerctl play-pause"
-            ",XF86AudioPrev, exec, playerctl previous"
-            ",XF86AudioNext, exec, playerctl next"
+            ",XF86AudioRaiseVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
+            ",XF86AudioLowerVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
+            ",XF86AudioMute, exec, ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+            ",XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+            ",XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
+            ",XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
         ]
         ++ workspace_binds 1 1
         ++ workspace_binds 2 2
@@ -129,10 +128,10 @@ in
             "${pkgs.element-desktop}/bin/element-desktop --hidden --profile FSMI"
             "/usr/lib/polkit-kde-authentication-agent-1"
             "wl-clipboard-history -t"
-            "swaybg -m fill -i ${vars.wallpaperPath}"
+            "${pkgs.swaybg}/bin/swaybg -m fill -i ${vars.wallpaperPath}"
             "${pkgs.discord}/bin/discord"
             "blueman-applet"
-            "nm-applet"
+            "${pkgs.networkmanagerapplet}/bin/nm-applet"
             #"flameshot"
             #"qpwgraph -m"
             #''tmux new-session -d "btop" \; split-window -v "gping -n 2 -b 600 s1.isiko404.dev s2.isiko404.dev s3.isiko404.dev 1.1.1.1" \; split-window -h "sudo iftop" \; rename-session "Startup" \; rename-window "Stats" \; resize-pane -D 10 \; select-pane -t :+.top \; set status off''
