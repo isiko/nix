@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, cores, ...}:
 
 {
   systemd.user.services.waybar = {
@@ -122,7 +122,7 @@
         };
         "cpu" = {
           "interval" = 1;
-          "format" = "{icon0} {icon1} {icon2} {icon3} {icon4} {icon5}";
+          "format" = builtins.concatStringsSep " " (builtins.genList (x: "{icon${builtins.toString x}}") cores);
           "tooltip" = "Total:  {iconN}";
           "format-alt-click" = "click-right";
           "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];

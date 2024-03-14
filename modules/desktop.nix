@@ -3,8 +3,8 @@
 {
   # XDG Portal
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.configPackages = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
 
   programs.hyprland = {
     enable = true;
@@ -20,23 +20,27 @@
    })
   ];
 
-  services.greetd = {
-    enable = true;
-    settings = {
-    default_session.command = ''
-     ${pkgs.greetd.tuigreet}/bin/tuigreet \
-       --time \
-       --asterisks \
-       --user-menu \
-       --cmd Hyprland
-       -r
-    '';
-    };
-  };
+  #services.xserver.disGreyplayManager.gdm = {
+  #  enable = true;
+  #  wayland = true;
+  #};
+  #services.greetd = {
+  #  enable = true;
+  #  settings = {
+  #  default_session.command = ''
+  #   ${pkgs.greetd.tuigreet}/bin/tuigreet \
+  #     --time \
+  #     --asterisks \
+  #     --user-menu \
+  #     --cmd Hyprland
+  #     -r
+  #  '';
+  #  };
+  #};
 
-  environment.etc."greetd/environments".text = ''
-    Hyprland
-  '';
+  #environment.etc."greetd/environments".text = ''
+  #  Hyprland
+  #'';
 
   # Gnome
   #services.xserver.enable = true;

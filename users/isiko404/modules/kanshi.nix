@@ -18,7 +18,7 @@ let
     criteria = any;
     width = 3440;
     height = 1440;
-    #refreshRate = 59;
+    refreshRate = 144;
   };
 
   home_top_data = {

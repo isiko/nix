@@ -15,6 +15,7 @@ in
   # Packages
   # Search like this: nix search <PackageName>
   environment.systemPackages = with pkgs; [
+    exfat
     home-manager
 
     # Compilers and Programming stuff
@@ -69,6 +70,7 @@ in
 
     # Some more cool stuff :D
     cmatrix
+    asciiquarium
     cowsay
     nms       # Text-Apearing Effect
     neofetch
@@ -111,6 +113,7 @@ in
     android-studio
 
     # Desktop Programs
+    webcord
     scribus
     feh
     wl-mirror
@@ -128,6 +131,7 @@ in
     spotify
     keepassxc
     firefox
+    chromium
     signal-desktop
     obsidian
     gnome.nautilus
