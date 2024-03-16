@@ -7,6 +7,7 @@ let
            ../modules/networking.nix
            ../modules/restic.nix
            ../modules/syncthing.nix
+           ../modules/ssh.nix
        ];
        desktop-environment = [
            ../modules/auth.nix
