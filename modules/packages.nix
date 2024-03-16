@@ -5,8 +5,8 @@ let
 in
 {
   # Wacom Tablet
-  services.xserver.wacom.enable = true;
   hardware.opentabletdriver.enable = true;
+  #services.xserver.wacom.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
