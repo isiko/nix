@@ -15,7 +15,7 @@
           "*.sync-conflict-*"
         ];
         initialize = true;
-        passwordFile = "/etc/nixos/secrets/restic-password-${name}";
+        passwordFile = config.sops.secrets."restic/machines/${name}".path;
         repository = "sftp:backup-kobert:/mnt/lts/isiko_backup/${name}";
         timerConfig = {
           OnCalendar = "*-*-* *:00:00";

@@ -57,6 +57,8 @@ let
                 ../modules/packages.nix
                 ../modules/filesystems.nix
                 ../hosts/${name}.nix
+                inputs.sops-nix.nixosModules.sops
+                ../modules/sops.nix
             ];
     };
 in

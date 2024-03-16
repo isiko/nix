@@ -1,0 +1,10 @@
+keys: 
+  - &admin_isiko404 d44087d20b5c367c1cbd1b3cd3787052d5d6d790
+  - &server_isiko404_desktop age132d27340zdcexmkza0atpqx7adlfps38hcuhs3znlx307r539c4q20zs53
+creation_rules:
+  - path_regex: secrets/isiko404.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+        - *server_isiko404_desktop
+        pgp:
+        - *admin_isiko404
