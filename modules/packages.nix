@@ -113,6 +113,7 @@ in
     android-studio
 
     # Desktop Programs
+    tor-browser
     webcord
     scribus
     feh
