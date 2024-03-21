@@ -129,6 +129,7 @@ in
     audacity
     fluffychat
     element-desktop
+    fractal
     spotify
     keepassxc
     firefox
