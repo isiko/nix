@@ -54,7 +54,7 @@
     };
 
   fileSystems."/media/blk" = {
-    device = "/dev/disk/by-uuid/8B96-D3BC";
+    device = "/dev/sda";
     fsType = "exfat";
   };
 
