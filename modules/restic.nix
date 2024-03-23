@@ -22,7 +22,7 @@
           Persistent = true;
         };
         extraOptions = [
-          "sftp.command='ssh isiko404@kobert.dev -p 222 -i /etc/nixos/secrets/keys/id_backups -s sftp'"
+          "sftp.command='ssh isiko404@kobert.dev -p 222 -i ${config.sops.secrets."restic/ssh-key".path} -s sftp'"
         ];
         pruneOpts = [
           "--keep-daily 7"
