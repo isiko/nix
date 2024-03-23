@@ -158,6 +158,7 @@ in
     xdg-utils
     iio-sensor-proxy
     upower
+    playerctl # Needed for Waybar Spotify Integration
 
     # Keyring
     gcr
